@@ -4,14 +4,20 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "baseUrl": "." //
+    "baseUrl": "."
+    //
   },
-  "include": ["src/**/*", "app.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*",
+    "app.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

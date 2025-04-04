@@ -11,8 +11,8 @@ export const taskCreateMiddleware = async (req: Request, res: Response, next: Ne
         if (existingTask) res.status(400).json({message: "Tasks already exists"});
 
         if (!title || !description) {
-            res.status(400).json({message: "Please input title and description"})
-            throw new Error(`Please input ${title} and ${description}`)
+            res.status(400).json({message: `Please input ${title} and ${description}`})
+            
         }
         next()
     } catch (e) {

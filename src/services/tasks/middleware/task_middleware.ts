@@ -12,7 +12,7 @@ export const taskCreateMiddleware = async (req: Request, res: Response, next: Ne
 
         if (!title || !description) {
             res.status(400).json({message: `Please input ${title} and ${description}`})
-            
+
         }
         next()
     } catch (e) {
@@ -39,16 +39,18 @@ export const getTaskId = async (req: Request, res: Response, next: NextFunction)
 
 export const updateTaskMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     try {
-        const id = req.params.id;
+        const {id} = req.params;
         const {title, description} = req.body;
 
-        const tasks = await Task.findOne({where: {id: id}});
+        const tasks = await Task.findByPk(id);
 
         if (!tasks) return res.status(404).json({message: "Task not found"});
 
+        await tasks.update({title: title, description: description});
+
         if (!title || !description) {
             res.status(400).json({message: "Please input title and description"})
-            throw new Error(`Please input ${title} and ${description}`)
+            // throw new Error(`Please input ${title} and ${description}`)
         }
         next()
     } catch (e) {

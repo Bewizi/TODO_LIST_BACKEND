@@ -53,13 +53,13 @@ class TaskControllers {
     updateTask = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
         try {
             const {id} = req.params;
-            const {title, description} = req.body;
+            // const {title, description} = req.body;
 
             const tasks = await Task.findByPk(id);
 
-            if (!tasks) return res.status(404).json({message: "Task not found"});
-
-            await tasks.update({title: title, description: description});
+            // if (!tasks) return res.status(404).json({message: "Task not found"});
+            //
+            // await tasks.update({title: title, description: description});
 
             res.status(200).json({message: "Task updated successfully", tasks});
             next();

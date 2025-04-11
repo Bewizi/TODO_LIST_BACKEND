@@ -2,6 +2,12 @@ import {Sequelize} from "sequelize";
 import dotenv from "dotenv";
 
 dotenv.config();
+
+if (!process.env.DATABASE_URL) {
+    console.error("DATABASE_URL is undefined. Please check your environment variable.");
+    process.exit(1); // Exit process if DATABASE_URL is not set
+}
+
 const database = new Sequelize(process.env.DATABASE_URL as string,
     // config.database.name,
     // config.database.username,

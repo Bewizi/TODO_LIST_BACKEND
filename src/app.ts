@@ -17,7 +17,7 @@ const crs = cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-    preflightContinue: true
+    
 })
 
 app.use(express.json())

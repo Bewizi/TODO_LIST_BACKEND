@@ -9,7 +9,7 @@ const database = new Sequelize(
     // config.database.password
     {
         dialect: "mysql",
-        port: config.database.port,
+        // port: config.database.port,
         logging: console.log,
         pool: {
             max: 5,

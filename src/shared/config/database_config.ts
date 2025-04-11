@@ -1,17 +1,11 @@
 import {Sequelize} from "sequelize";
-import dotenv from "dotenv";
+import config from "./index_config";
 
-dotenv.config();
 
-if (!process.env.DATABASE_URL) {
-    console.error("DATABASE_URL is undefined. Please check your environment variable.");
-    process.exit(1); // Exit process if DATABASE_URL is not set
-}
-
-const database = new Sequelize(process.env.DATABASE_URL as string,
-    // config.database.name,
-    // config.database.username,
-    // config.database.password,
+const database = new Sequelize(
+    config.database.name,
+    config.database.username,
+    config.database.password,
     {
         dialect: "mysql",
         // port: config.database.port,

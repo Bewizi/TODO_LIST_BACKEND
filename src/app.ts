@@ -23,7 +23,6 @@ const crs = cors({
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(crs)
-app.options('*', cors()); // Enable preflight requests
 
 
 app.use('/api/', rootRoutes)

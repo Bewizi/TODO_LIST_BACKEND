@@ -3,9 +3,10 @@ import config from "./index_config";
 
 
 const database = new Sequelize(
-    config.database.name,
-    config.database.username,
-    config.database.password,
+    config.database.url,
+    // ,config.database.name,
+    // config.database.username,
+    // config.database.password
     {
         dialect: "mysql",
         port: config.database.port,

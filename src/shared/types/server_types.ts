@@ -10,6 +10,7 @@ interface Database {
     port: number,
     username: string,
     password: string
+    url: string
 }
 
 export interface ServerConfig {

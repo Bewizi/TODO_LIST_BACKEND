@@ -18,7 +18,8 @@ const config: ServerConfig = {
         name: getEnv("DATABASE_NAME"),
         port: Number(getEnv("DATABASE_PORT")),
         username: getEnv("DATABASE_USERNAME"),
-        password: getEnv("DATABASE_PASSWORD")
+        password: getEnv("DATABASE_PASSWORD"),
+        url: getEnv("DATABASE_URL"),
     }
 }
 

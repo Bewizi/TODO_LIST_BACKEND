@@ -46,7 +46,6 @@ export const updateTaskMiddleware = async (req: Request, res: Response, next: Ne
 
         if (!tasks) return res.status(404).json({message: "Task not found"});
 
-        await tasks.update({title: title, description: description});
 
         if (!title || !description) {
             res.status(400).json({message: "Please input title and description"})

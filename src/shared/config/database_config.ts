@@ -1,13 +1,14 @@
 import {Sequelize} from "sequelize";
-import config from "./index_config";
+import dotenv from "dotenv";
 
-const database = new Sequelize(
-    config.database.name,
-    config.database.username,
-    config.database.password,
+dotenv.config();
+const database = new Sequelize(process.env.DATABASE_URL as string,
+    // config.database.name,
+    // config.database.username,
+    // config.database.password,
     {
         dialect: "mysql",
-        port: config.database.port,
+        // port: config.database.port,
         logging: console.log,
         pool: {
             max: 5,
